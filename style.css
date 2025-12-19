@@ -1,0 +1,136 @@
+* {
+    border: none;
+    border-radius: 8px;
+    font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NF", "Font Awesome 6 Free", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.9);
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #cdd6f4;
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.active {
+    background-color: rgba(137, 180, 250, 0.3);
+    color: #89b4fa;
+}
+
+#workspaces button.urgent {
+    background-color: #f38ba8;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#custom-power-profile,
+#custom-power,
+#tray,
+#window {
+    padding: 0 10px;
+    margin: 0 2px;
+    background-color: rgba(49, 50, 68, 0.8);
+    color: #cdd6f4;
+}
+
+#window {
+    background-color: transparent;
+}
+
+#custom-power-profile.performance {
+    color: #f38ba8;
+}
+
+#custom-power-profile.power-saver {
+    color: #a6e3a1;
+}
+
+#custom-power-profile.balanced {
+    color: #89dceb;
+}
+
+#battery {
+    color: #a6e3a1;
+}
+
+#battery.charging {
+    color: #a6e3a1;
+}
+
+#battery.warning:not(.charging) {
+    color: #fab387;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: #89dceb;
+}
+
+#memory {
+    color: #cba6f7;
+}
+
+#network {
+    color: #f9e2af;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+#pulseaudio {
+    color: #89b4fa;
+}
+
+#pulseaudio.muted {
+    color: #585b70;
+}
+
+#tray {
+    background-color: transparent;
+}
+
+#custom-power {
+    color: #f38ba8;
+    font-size: 16px;
+    padding: 0 12px;
+}
+
+#custom-power:hover {
+    background-color: rgba(243, 139, 168, 0.2);
+}
+
+@keyframes blink {
+    to {
+        background-color: #f38ba8;
+        color: #1e1e2e;
+    }
+}
