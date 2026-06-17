@@ -2,7 +2,7 @@
 
 # Power menu script for Waybar
 
-options="Logout\nRestart\nShutdown\nSuspend"
+options="Logout\nRestart\nShutdown\nHibernate"
 
 command=$(echo -e "$options" | wofi --dmenu --prompt "Power Menu" --width 200 --height 180 --insensitive)
 
@@ -24,7 +24,8 @@ case $command in
     "Shutdown")
         systemctl poweroff
         ;;
-    "Suspend")
-        hyprlock & sleep 0.5 && systemctl suspend
+    "Hibernate")
+        # sudo pm-hibernate
+        hyprlock & sleep 0.5 && sudo pm-hibernate
         ;;
 esac
